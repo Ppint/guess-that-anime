@@ -1,5 +1,8 @@
 import { postRouter } from "~/server/api/routers/post";
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
+import { waifuRouter } from "./routers/waifu";
+import { characterRouter } from "./routers/character";
+import { animeRouter } from "./routers/anime";
 
 /**
  * This is the primary router for your server.
@@ -8,6 +11,9 @@ import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
+  waifu: waifuRouter,
+  character: characterRouter,
+  anime: animeRouter,
 });
 
 // export type definition of API
