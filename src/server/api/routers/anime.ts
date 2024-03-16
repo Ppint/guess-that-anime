@@ -24,7 +24,9 @@ export const animeRouter = {
       const animeData = await anime.json();
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-      const titles = animeData.data.map((anime: { title: any }) => anime.title);
+      const titles = animeData.data.map(
+        (anime: { title: string }) => anime.title,
+      );
 
       return titles;
     }),

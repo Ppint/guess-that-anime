@@ -11,10 +11,10 @@ export default function Anime() {
   const [name, setName] = useState<string>("");
   const anime = api.anime.getAnime.useMutation();
   const animeSearch = api.anime.getAutoSearch.useQuery({ query: name });
-  const [resetTrigger, setResetTrigger] = useState<boolean>(false);
-  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+  const [resetTrigger, setResetTrigger] = useState<number>(0);
+  const onSubmitHandler = (e: KeyboardEvent) => {
     e.preventDefault();
-    setResetTrigger((prev) => !prev);
+    setResetTrigger((prev) => prev + 1);
     console.log(answer);
     console.log(name);
     if (name === answer) {
@@ -56,7 +56,7 @@ export default function Anime() {
             <Image src={animePic} alt="waifu" fill={true} quality={100} />
           </div>
 
-          <form onSubmit={(e) => onSubmitHandler(e)} className="mt-8 w-full">
+          <form className="mt-8 w-full">
             <Autocomplete
               key={resetTrigger}
               disablePortal
