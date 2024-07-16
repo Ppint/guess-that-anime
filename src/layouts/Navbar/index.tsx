@@ -8,7 +8,7 @@ export const NavBar: React.FC = () => {
           Guess That ...
         </div>
         <Link href="/anime" className="p-4 text-xl font-semibold text-white hover:text-[#000090]">
-          Anime
+          Anime Test
         </Link>
       </div>
     </div>
